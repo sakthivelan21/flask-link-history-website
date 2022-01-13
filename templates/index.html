@@ -1,0 +1,69 @@
+{%extends 'baseTemplate.html' %}
+
+{% block head %}
+	<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+	<title>YouTube Watch History</title>
+	
+{% endblock %}
+
+{% block body %}
+	<div id="index-page-container">
+
+		<h2 class="title">YouTube Watch History</h2>
+		
+		<div class="page-iframe">
+             <iframe id="videoPlayer" height="0" width="0px" src="" frameborder="0"  allowfullscreen></iframe>
+        </div>
+		<div id="index-page-form">
+			<form action="/addLink" method="post">
+				<div class="form-block">
+					<label for="name" class="form-label">Enter Video Title :</label>
+					<input class="form-input" name="name" type="text" placeholder="video title" required />
+				</div>
+				<div class="form-block">
+					<label for="url" class="form-label">Enter Video Url :</label>
+					<input class="form-input" name="url" type="text" placeholder="url link" requied/>
+				</div>
+				<input type="submit" value="add" class="form-submit">
+			</form>
+		</div>
+		
+		{% 	if links|length < 1 %}
+		
+			<h4 class="title">Oops !! add a new one !!</h4>
+		
+		{% else %}
+		
+			<div id="index-page-table">
+				<table>
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>Title</th>
+							<th>Link</th>
+							<th>Date Created</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+					{% for link in links %}
+						<tr>
+							<td>{{ link.id }}</td>
+							<td>{{ link.name }}</td>
+							<td>{{ link.url }}</td>
+							<td>{{ link.date_created.date() }}</td>
+							<td>
+								<button class="buttons" onclick="playVideo('{{link.url}}')">Play</button>
+								<a href="/updateLink/{{link.id}}" class="table-anchor"><button class="buttons">Update</button></a>
+								<a href="/deleteLink/{{link.id}}" class="table-anchor"><button class="buttons">Delete</button></a>
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		
+		{% endif %}
+	</div>
+	<script src="{{url_for('static',filename='js/script.js')}}"></script>
+{% endblock %}

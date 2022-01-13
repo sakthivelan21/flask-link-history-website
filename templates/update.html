@@ -1,0 +1,26 @@
+{%extends 'baseTemplate.html' %}
+
+{% block head %}
+	<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+	<title>YouTube Watch History</title>
+	
+{% endblock %}
+
+{% block body %}
+	<div id="index-page-container">
+		<h3 class="title">YouTube Watch History</h3>
+		<div id="index-page-form">
+			<form action="/updateLinkData/{{link.id}}" method="post">
+				<div class="form-block">
+					<label for="name" class="form-label">Enter Video Title :</label>
+					<input class="form-input" name="name" type="text" placeholder="video title" value="{{link.name}}" required />
+				</div>
+				<div class="form-block">
+					<label for="url" class="form-label">Enter Video Url :</label>
+					<input class="form-input" name="url" type="text" placeholder="url link" value="{{link.url}}" requied/>
+				</div>
+				<input type="submit" value="update" class="form-submit">
+			</form>
+		</div>
+	</div>
+{% endblock %}
