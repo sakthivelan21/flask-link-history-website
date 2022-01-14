@@ -10,7 +10,7 @@ function playVideo(urlLink)
 	{
 		var link=urlLink.split('/');
         videoPlayer.src="https://www.youtube.com/embed/"+link[link.length-1];
-        videoPlayer.style["width"]="80%";
+        videoPlayer.style["width"]="100%";
         videoPlayer.style["height"]="400px";
 	}	
 }

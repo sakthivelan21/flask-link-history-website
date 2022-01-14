@@ -8,9 +8,14 @@
 
 {% block body %}
 	<div id="index-page-container">
-
-		<h2 class="title">YouTube Watch History</h2>
-		
+		<div class="head-bar">
+			<h2 class="title">YouTube Watch History</h2>
+			<div class="log-out"> 
+				<form action="/sign_out" method="post">
+					<input type="submit" value="Log out" class="buttons">
+				</form>
+			</div>
+		</div>
 		<div class="page-iframe">
              <iframe id="videoPlayer" height="0" width="0px" src="" frameborder="0"  allowfullscreen></iframe>
         </div>

@@ -1,0 +1,36 @@
+{%extends 'baseTemplate.html' %}
+
+{% block head %}
+
+	<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+	<title>YouTube Watch History</title>
+	
+{% endblock %}
+
+{% block body %}
+	<div id="index-page-container">
+
+		<h2 class="title">YouTube Watch History</h2>
+		{% if error != "" %}
+			<h5>{{error}}</h5>
+		{% endif %}
+		<div id="index-page-form">
+			<form action="/signup-user" method="post">
+				<div class="form-block">
+					<label for="name" class="form-label">Enter your Name :</label>
+					<input class="form-input" name="name" type="text" placeholder="name" required />
+				</div>
+				<div class="form-block">
+					<label for="name" class="form-label">Enter User Id :</label>
+					<input class="form-input" name="userId" type="text" placeholder="user id" required />
+				</div>				
+				<div class="form-block">
+					<label for="password" class="form-label">Enter Password :</label>
+					<input class="form-input" name="password" type="password" placeholder="password" requied/>
+				</div>
+				<input type="submit" value="Sign up" class="form-submit">
+			</form>
+			<p class="para-lines">Are you an existing user ? please <a href="/">login</a></p>
+		</div>
+	</div>
+{% endblock %}

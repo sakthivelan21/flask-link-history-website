@@ -19,6 +19,7 @@ body
 	padding:10px;
 	font-family:sanserif;
 	font-style:italic;
+	width:100%;
 }
 
 #index-page-container
@@ -69,9 +70,11 @@ body
 {
 	background:var(--BackGround);
 	color:var(--fontColor);
-	padding:5px;
+	padding:10px;
 	border:2px solid grey;
 	border-radius:5px;
+	width:90%;
+	margin:10px auto;
 }
 
 .form-input:focus
@@ -115,8 +118,23 @@ body
 .form-block
 {
 	margin:10px auto;
-	width:max-content;
 	padding:10px;
+	display:flex;
+	flex-direction:column;
+	
+}
+
+.log-out
+{
+	display: flex;
+	justify-content: end;
+	margin: 30px auto;
+}
+
+.head-bar
+{
+	display:flex;
+	justify-content:center;
 }
 
 .form-label
@@ -129,10 +147,24 @@ body
 	text-decoration:none;
 }
 
-.page-iframe #videoPlayer
+
+.page-iframe
 {
+	width:80%;
 	margin:0 auto;
-	display:block;
+}
+.para-lines
+{
+	text-align:center;
+}
+
+.para-lines a
+{
+	color:var(--inputHover);
+}
+
+.para-lines a:hover
+{	
 }
 
 @media (prefers-color-scheme: dark) {
@@ -163,14 +195,23 @@ body
 }
 
 @media only screen and (max-width: 650px) {
-	.form-block
+	
+	
+	#index-page-form
+	 {
+	  		width:95%;
+	 }
+	#index-page-container
+	  {
+	  		width:95%;
+	  }
+	.head-bar
 	{
-		display:flex;
 		flex-direction:column;
 	}
 	
-	.form-input
+	.page-iframe
 	{
-		margin:10px auto;
+		width:100%;
 	}
 }
