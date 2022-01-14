@@ -82,14 +82,14 @@ Visit http://localhost:5000 or http://0.0.0.0:5000 or http://yourIp:5000
 
 ## Dependencies
 
-click==8.0.3
-Flask==2.0.2
-Flask-SQLAlchemy==2.5.1
-greenlet==1.1.2
-itsdangerous==2.0.1
-Jinja2==3.0.3
-MarkupSafe==2.0.1
-SQLAlchemy==1.4.29
-Werkzeug==2.0.2
+click==8.0.3   
+Flask==2.0.2   
+Flask-SQLAlchemy==2.5.1   
+greenlet==1.1.2   
+itsdangerous==2.0.1   
+Jinja2==3.0.3   
+MarkupSafe==2.0.1   
+SQLAlchemy==1.4.29   
+Werkzeug==2.0.2   
 
 
