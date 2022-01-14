@@ -7,7 +7,7 @@
 ❖ Session handling and authenticating the users.   
 ❖ Dark Mode and Light Mode is provided with css as per user browser theme.   
 ❖ Allowing user to save their youtube video links and update them for future.   
-❖ can also play youtube videos in the website with iframe but the url should be in format like this ![alt text](https://youtu.be/WJbu2Ib3ozE)   
+❖ can also play youtube videos in the website with iframe but the url should be in format like this https://youtu.be/WJbu2Ib3ozE   
 
 ## Steps to start the Application
 
@@ -66,7 +66,9 @@ exit()
 **Starting Application**
 
 ```
-flask_app.py
+python3 app.py  -- linux
+
+py app.py -- windows
 ```
 
 **Deactivating Virtual Environment**
